@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Lyra ERP</title>
+  <link rel="stylesheet" href="projeto.css">
+  <script src="projeto.js"></script>
+</head>
+
+<body>
+  <!-- Cabeçalho -->
+  <div class="header-container">
+    <div class="header-left">
+      <!-- Logo Principal -->
+      <div class="logo">
+        <img src="logoz.png.png" alt="Logo da Empresa" class="logo-img">
+      </div>
+      <!-- Conteúdo do Cabeçalho -->
+      <div class="header-content">
+        <h1>Sistema Lyra ERP</h1>
+      </div>
+    </div>
+
+    <!-- Logos Adicionais -->
+    <div class="header-right">
+      <div class="additional-logo">
+        <img src="besterp.png.png" alt="Logo Adicional 1" class="logo-img">
+      </div>
+    </div>
+  </div>
+
+
+  <div class="intro">
+    <img id="photo" src="https://st2.depositphotos.com/1715570/5834/i/450/depositphotos_58349479-stock-photo-beautiful-young-woman-smiling-and.jpg" alt="Imagem de apresentação">
+    <div class="textDiv">
+      <h2>
+        O sistema Lyra ERP é uma empresa e ferramenta líder em gestão e solução, com uma visão diferente de qualquer negócio.
+        <br><br>
+        Com uma metodologia baseada na inovação contínua e no foco nas necessidades do cliente, oferecemos sistemas que proporcionam maior eficiência, controle e tomada de decisão estratégica em tempo real.
+      </h2>
+    </div>
+  </div>
+
+  <!-- Seções de conteúdo expansível -->
+  <div class="toggle-button" onclick="toggleContent(this)">
+    <div class="arrow">&#9654;</div>
+    <span id="title">Soluções Inovadoras para Gestão Empresarial</span>
+  </div>
+  <div class="hidden-content" id="content">
+    <p id="title3">
+      Na LyraA ERP, acreditamos que a tecnologia deve estar a serviço dos negócios. <br><br>
+      Nossos produtos são projetados para facilitar a gestão de empresas de todos os portes, oferecendo ferramentas robustas e flexíveis que acompanham o crescimento e a complexidade das operações.
+      <br><br>
+      Seja na automação de processos, controle financeiro ou na gestão de recursos, nossa plataforma ERP garante integração completa entre os setores, aumentando a produtividade e reduzindo custos.
+    </p>
+  </div>
+<br>
+  <div class="toggle-button" onclick="toggleContent(this)">
+    <div class="arrow">&#9654;</div>
+    <span id="title">Foco nas Necessidades do Cliente</span>
+  </div>
+  <div class="hidden-content" id="content">
+    <p id="title3">
+      Cada negócio tem suas particularidades, e é por isso que na MEGA ERP, nossa metodologia se baseia na customização de soluções. <br><br>
+      Trabalhamos de forma colaborativa com nossos clientes para entender seus desafios e oferecer sistemas que se adaptem às suas demandas específicas.
+      <br><br>
+      Essa abordagem centrada no cliente é o que nos diferencia no mercado e garante a entrega de valor real.
+    </p>
+  </div>
+<br>
+  <div class="toggle-button" onclick="toggleContent(this)">
+    <div class="arrow">&#9654;</div> <span id="title">Preços Acessíveis</span>
+  </div>
+  <div class="hidden-content" id="content">
+    <p id="title3">
+      Todo e qualquer ramo interfere diretamente no mercado em que você atua, o Lyra ERP te proporciona uma gama de atuações por preços ótimos. <br><br>
+      Trabalhar com a Lyra é fácil, prático, com valores que são fora do comum.
+      <br><br>
+      Tudo isso especialmente para você!
+    </p>
+  </div>
+
+  <button id="myBtn" onclick="inicializarModal()">Faça um orçamento já!</button>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <form action="/submit" method="POST" id="form">
+        <label for="modulos" id="title">Selecione os Módulos do ERP:</label>
+        <br>
+        <select id="modulos" name="modulos" multiple required>
+          <option value="financeiro">Financeiro</option>
+          <option value="contabilidade">Contabilidade</option>
+          <option value="compras">Compras</option>
+          <option value="vendas">Vendas</option>
+          <option value="estoque">Estoque</option>
+          <option value="producao">Produção</option>
+          <option value="rh">Recursos Humanos</option>
+          <option value="projetos">Projetos e Obras</option>
+          <option value="crm">CRM</option>
+          <option value="frotas">Frotas</option>
+          <option value="fiscal">Fiscal</option>
+        </select>
+        <br>
+        <label for="funcionalidades" id="title">Especifique Funcionalidades Desejadas:</label>
+        <br>
+        <textarea id="funcionalidades" name="funcionalidades" rows="5" placeholder="Descreva as funcionalidades que você espera de cada módulo." required></textarea>
+        <br>
+        <label for="tamanho" id="title">Tamanho da Empresa (Número de Funcionários):</label>
+        <br>
+        <input type="number" id="tamanho" name="tamanho" placeholder="Ex: 100" required>
+        <br>
+        <label for="integracoes" id="title">Necessita Integração com Outros Sistemas?</label>
+        <br>
+        <select id="integracoes" name="integracoes" required>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+        <br>
+        <label for="orcamento" id="title">Orçamento Disponível (em R$):</label>
+        <br>
+        <input type="number" id="orcamento" name="orcamento" placeholder="Ex: 50000" required>
+        <br>
+        <label for="prazo" id="title">Prazo de Implementação (em meses):</label>
+        <br>
+        <input type="number" id="prazo" name="prazo" placeholder="Ex: 6" required>
+        <br>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="contact-button" onclick="inicializarModalContato()">
+    Dúvidas
+  </div>
+
+  <div id="contactModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="fecharModalContato()">&times;</span>
+      <form action="/submit" method="POST" id="contactForm">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
